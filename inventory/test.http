@@ -1,0 +1,43 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+### 1 Warehouse
+POST http://localhost:8080/api/warehouses
+Content-Type: application/json
+
+{"name":"Main Warehouse","location":"Pune"}
+
+### 2 Category
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{"name":"Electronics"}
+
+### 3 Supplier
+POST http://localhost:8080/api/suppliers
+Content-Type: application/json
+
+{"name":"ABC Traders","email":"abc@mail.com","phone":"9999999999"}
+
+### 4 Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{"sku":"P001","name":"Keyboard","price":999.00,"lowStockThreshold":10,"categoryId":1,"supplierId":1}
+
+### 5 Stock in
+POST http://localhost:8080/api/inventory/stock-in
+Content-Type: application/json
+
+{"productId":1,"warehouseId":1,"quantity":50,"remarks":"Initial"}
+
+### 6 Stock out
+POST http://localhost:8080/api/inventory/stock-out
+Content-Type: application/json
+
+{"productId":1,"warehouseId":1,"quantity":45}
